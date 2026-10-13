@@ -5,7 +5,8 @@ import ContactCard from './components/ContactCard';
 import OfferCard from './components/OfferCard';
 import SectionHeading from './components/SectionHeading';
 
-const heroImage = new URL('../../Bilder/Start.jpg', import.meta.url).href;
+const heroImage = new URL('../../Bilder/Wingovers.jpg', import.meta.url).href;
+const pilotImage = new URL('../../Bilder/Profilbild.jpeg', import.meta.url).href;
 const flightImages = {
   panorama: new URL('../../Bilder/Landing.jpg', import.meta.url).href,
   thermal: new URL('../../Bilder/During_Flight.jpg', import.meta.url).href,
@@ -15,87 +16,81 @@ const flightImages = {
 
 const flightOffers = [
   {
-    key: 'Panorama',
+    key: 'Panoramaflug',
     image: flightImages.panorama,
-    title: 'Panorama Flight',
-    description: 'A calm scenic experience with wide views over the Swiss Alps and valley lakes.',
+    title: 'Panoramaflug',
+    description: 'Ein ruhiger, aussichtsreicher Flug mit weitem Blick über die Alpen und die Täler.',
     price: 'CHF 180',
     details: [
-      { label: 'Duration', value: '15–20 min' },
-      { label: 'Altitude difference', value: '900–1,200 m' },
-      { label: 'Price', value: 'CHF 180' },
-      { label: 'Description', value: 'Perfect for first-time flyers and landscape lovers.' },
+      { label: 'Dauer', value: '15–20 Min.' },
+      { label: 'Höhenunterschied', value: '900–1.200 m' },
+      { label: 'Preis', value: 'CHF 180' },
+      { label: 'Beschreibung', value: 'Ideal für Erstflieger und alle, die die Landschaft genießen möchten.' },
     ],
   },
   {
-    key: 'Thermal',
+    key: 'Thermikflug',
     image: flightImages.thermal,
-    title: 'Thermal Flight',
-    description: 'A longer flight that uses thermals for more airtime, more height, and more alpine freedom.',
+    title: 'Thermikflug',
+    description: 'Ein längerer Flug mit Thermik für mehr Flugzeit, mehr Höhe und mehr Freiheit.',
     price: 'CHF 220',
     details: [
-      { label: 'Duration', value: '25–35 min' },
-      { label: 'Altitude difference', value: '1,100–1,500 m' },
-      { label: 'Price', value: 'CHF 220' },
-      { label: 'Description', value: 'For guests who want more air time and a richer mountain experience.' },
+      { label: 'Dauer', value: '25–35 Min.' },
+      { label: 'Höhenunterschied', value: '1.100–1.500 m' },
+      { label: 'Preis', value: 'CHF 220' },
+      { label: 'Beschreibung', value: 'Für Gäste, die mehr Flugzeit und ein intensiveres Bergerlebnis möchten.' },
     ],
   },
   {
-    key: 'Adventure',
+    key: 'Abenteuerflug',
     image: flightImages.adventure,
-    title: 'Adventure Flight',
-    description: 'The dynamic choice with playful manoeuvres and a more sporty tandem flight profile.',
+    title: 'Abenteuerflug',
+    description: 'Die dynamische Wahl mit spielerischen Manövern und einem sportlicheren Flugprofil.',
     price: 'CHF 240',
     details: [
-      { label: 'Duration', value: '20–30 min' },
-      { label: 'Altitude difference', value: '1,000–1,400 m' },
-      { label: 'Price', value: 'CHF 240' },
-      { label: 'Description', value: 'Great for guests who want a more active and energetic ride.' },
+      { label: 'Dauer', value: '20–30 Min.' },
+      { label: 'Höhenunterschied', value: '1.000–1.400 m' },
+      { label: 'Preis', value: 'CHF 240' },
+      { label: 'Beschreibung', value: 'Perfekt für Gäste, die es aktiver und lebendiger mögen.' },
     ],
   },
   {
-    key: 'Gift Voucher',
+    key: 'Geschenkgutschein',
     image: flightImages.voucher,
-    title: 'Gift Voucher',
-    description: 'A flexible present for birthdays, anniversaries, and special alpine surprises.',
-    price: 'From CHF 180',
+    title: 'Geschenkgutschein',
+    description: 'Ein flexibles Geschenk für Geburtstage, Jubiläen und besondere Überraschungen.',
+    price: 'Ab CHF 180',
     details: [
-      { label: 'Price', value: 'From CHF 180' },
-      { label: 'Description', value: 'A thoughtful gift for adventure seekers.' },
+      { label: 'Preis', value: 'Ab CHF 180' },
+      { label: 'Beschreibung', value: 'Ein passendes Geschenk für alle Abenteuerfans.' },
     ],
   },
 ];
 
 const contactItems = [
   {
-    label: 'Phone',
-    value: '+41 79 000 00 00',
-    href: 'tel:+41790000000',
-    description: 'Call for booking questions and weather updates.',
+    label: 'Telefon',
+    value: '+41 79 278 05 57',
+    href: 'tel:+41792780557',
+    description: 'Für Buchungsfragen und Wetter-Updates anrufen.',
   },
   {
-    label: 'Email',
-    value: 'hello@tandemflug.ch',
-    href: 'mailto:hello@tandemflug.ch',
-    description: 'Send booking details or special requests by email.',
-  },
-  {
-    label: 'WhatsApp',
-    value: 'Chat on WhatsApp',
-    href: 'https://wa.me/41790000000',
-    description: 'Quick messaging for same-day coordination.',
+    label: 'E-Mail',
+    value: 'silas.mathis@bluewin.ch',
+    href: 'mailto:silas.mathis@bluewin.ch',
+    description: 'Buchungsdetails oder Sonderwünsche per E-Mail senden.',
   },
   {
     label: 'Instagram',
-    value: '@tandemflug.ch',
-    href: 'https://instagram.com',
-    description: 'See flight photos, weather highlights, and mountain scenes.',
+    value: '@mathis.silas',
+    href: 'https://www.instagram.com/mathis.silas/',
+    description: 'Flugbilder, Wetter-Highlights und Bergimpressionen ansehen.',
   },
   {
-    label: 'Location',
-    value: 'Interlaken, Switzerland',
+    label: 'Standorte',
+    value: 'Davos, Klosters, Sargans, Flums, Fanas',
     href: 'https://maps.google.com',
-    description: 'Meeting point near the Alpine launch areas.',
+    description: 'Treffpunkte in Graubünden und im Sarganserland.',
   },
 ];
 
@@ -112,85 +107,81 @@ function App() {
     <div className="page-shell">
       <header className="site-header">
         <a className="site-logo" href="#home">
-          <span className="site-logo__mark">TF</span>
-          <span>
-            <strong>Tandem Flight</strong>
-            <small>Swiss Alps Booking</small>
-          </span>
+          Mathis Tandemflights
         </a>
-        <nav className="site-nav" aria-label="Primary">
-          <a href="#about">About</a>
-          <a href="#offers">Offers</a>
-          <a href="#booking">Booking</a>
-          <a href="#contact">Contact</a>
+        <nav className="site-nav" aria-label="Hauptnavigation">
+          <a href="#about">Über mich</a>
+          <a href="#offers">Angebote</a>
+          <a href="#booking">Buchung</a>
+          <a href="#contact">Kontakt</a>
         </nav>
       </header>
 
       <main>
         <section className="hero" id="home">
           <div className="hero__content">
-            <span className="hero__eyebrow">Paragliding. Mountains. Freedom.</span>
-            <h1>Experience the Swiss Alps from Above</h1>
+            <span className="hero__eyebrow">Gleitschirm. Berge. Freiheit.</span>
+            <h1>Die Alpen von oben erleben</h1>
             <p>
-              Book your tandem flight with a professional pilot and send a manual booking request that is reviewed for weather,
-              safety, and availability.
+              Buche deinen Tandemflug mit einem professionellen Piloten und sende eine Buchungsanfrage, die manuell auf Wetter,
+              Sicherheit und Verfügbarkeit geprüft wird.
             </p>
             <div className="hero__actions">
               <a className="button button--primary" href="#booking">
-                Book a Flight
+                Flug buchen
               </a>
               <a className="button button--ghost" href="#offers">
-                Learn More
+                Mehr erfahren
               </a>
             </div>
-            <div className="hero__stats" aria-label="Booking highlights">
+            <div className="hero__stats" aria-label="Buchungsübersicht">
               <div>
                 <strong>100%</strong>
-                <span>Manual review</span>
+                <span>Manuelle Prüfung</span>
               </div>
               <div>
-                <strong>4 flight types</strong>
-                <span>From calm to adventurous</span>
+                <strong>4 Flugarten</strong>
+                <span>Von ruhig bis sportlich</span>
               </div>
               <div>
-                <strong>Swiss Alps</strong>
-                <span>Alpine launch areas</span>
+                <strong>Alpenregion</strong>
+                <span>Startplätze in den Bergen</span>
               </div>
             </div>
           </div>
           <div className="hero__visual">
-            <img src={heroImage} alt="Paragliding above the Swiss Alps" />
+            <img src={heroImage} alt="Gleitschirmflug über den Alpen" />
             <div className="hero__card">
-              <span>Booking flow</span>
-              <strong>Request → Review → Confirm</strong>
-              <p>Bookings are only confirmed after the pilot checks weather and flight conditions.</p>
+              <span>Buchungsablauf</span>
+              <strong>Anfrage → Prüfung → Bestätigung</strong>
+              <p>Buchungen werden erst bestätigt, wenn der Pilot Wetter und Flugbedingungen geprüft hat.</p>
             </div>
           </div>
         </section>
 
         <section className="section about" id="about">
           <SectionHeading
-            eyebrow="About"
-            title="Professional Tandem Pilot"
-            description="Reliable, experienced, and focused on safe mountain flights with a clear communication process."
+            eyebrow="Über mich"
+            title="Professioneller Tandempilot"
+            description="Zuverlässig, erfahren und mit Fokus auf sichere Flüge und klare Kommunikation."
           />
           <div className="about__grid">
             <article className="about-card about-card--photo">
               <div className="about-card__photo">
-                <img src={flightImages.thermal} alt="Pilot portrait placeholder" />
+                <img src={pilotImage} alt="Silas Mathis - Tandempilot" />
               </div>
             </article>
             <article className="about-card">
-              <h3>Pilot Profile</h3>
+              <h3>Silas Mathis</h3>
               <p>
-                The pilot flies regularly in the Alpine region and works with conservative safety standards, checked launch windows,
-                and a calm passenger briefing before take-off.
+                Selbstständiger Gleitschirm-Tandempilot mit Leidenschaft für sichere und unvergessliche Flüge in den Alpen.
+                Student an der ETH Zürich für Erd- und Klimawissenschaften und ausgebildeter Gebirgsspezialist.
               </p>
               <ul>
-                <li>Certified tandem operations</li>
-                <li>Weather-aware scheduling</li>
-                <li>Clear passenger briefing</li>
-                <li>Safety first decision-making</li>
+                <li>Diplomierter Tandempilot seit 2025</li>
+                <li>ETH-Student (Erd- und Klimawissenschaften)</li>
+                <li>Gebirgsausbildung Andermatt (2023–2024)</li>
+                <li>Cambridge English C1</li>
               </ul>
             </article>
           </div>
@@ -198,9 +189,9 @@ function App() {
 
         <section className="section offers" id="offers">
           <SectionHeading
-            eyebrow="Flight Offers"
-            title="Choose Your Flight Style"
-            description="Each offer is presented as a booking request card so customers can pick the experience that fits them best."
+            eyebrow="Angebote"
+            title="Wähle deinen Flugstil"
+            description="Jedes Angebot ist als Buchungskarte aufgebaut, damit du das passende Erlebnis auswählen kannst."
           />
           <div className="offers__grid">
             {flightOffers.map((offer) => (
@@ -219,18 +210,18 @@ function App() {
 
         <section className="section booking" id="booking" ref={bookingSectionRef}>
           <SectionHeading
-            eyebrow="Booking Request"
-            title="Send a Manual Booking Request"
-            description="Customers submit requests through the form below. The pilot reviews them before any confirmation is sent."
+            eyebrow="Buchung"
+            title="Sende eine Buchungsanfrage"
+            description="Über das Formular unten wird eine Anfrage gesendet. Der Pilot prüft sie vor jeder Bestätigung."
           />
           <BookingForm flightTypePreset={selectedFlightType} onSubmitted={() => setSelectedFlightType('')} />
         </section>
 
         <section className="section contact" id="contact">
           <SectionHeading
-            eyebrow="Contact"
-            title="Stay in Touch"
-            description="Use the contact options below for questions, availability checks, and social updates."
+            eyebrow="Kontakt"
+            title="In Kontakt bleiben"
+            description="Nutze die Kontaktmöglichkeiten unten für Fragen, Verfügbarkeit und Social-Media-Updates."
           />
           <div className="contact__grid">
             {contactItems.map((contactItem) => (
@@ -238,25 +229,22 @@ function App() {
             ))}
           </div>
           <div className="social-links">
-            <a className="button button--ghost" href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a className="button button--ghost" href="https://www.instagram.com/mathis.silas/" target="_blank" rel="noreferrer">
               Instagram
             </a>
-            <a className="button button--ghost" href="https://wa.me/41790000000" target="_blank" rel="noreferrer">
-              WhatsApp
-            </a>
-            <a className="button button--ghost" href="mailto:hello@tandemflug.ch">
-              Email
+            <a className="button button--ghost" href="mailto:silas.mathis@bluewin.ch">
+              E-Mail
             </a>
           </div>
         </section>
       </main>
 
       <footer className="site-footer">
-        <p>Copyright 2026 Tandem Flight Booking. All rights reserved.</p>
-        <nav aria-label="Legal">
-          <a href="#home">Privacy Policy</a>
-          <a href="#home">Terms and Conditions</a>
-          <a href="#home">Imprint</a>
+        <p>Copyright 2026 Mathis Tandemflights. Alle Rechte vorbehalten.</p>
+        <nav aria-label="Rechtliches">
+          <a href="#home">Datenschutz</a>
+          <a href="#home">AGB</a>
+          <a href="#home">Impressum</a>
         </nav>
       </footer>
     </div>

@@ -42,4 +42,4 @@ The schema is created from `database/init.sql` when the PostgreSQL container sta
 
 ## Local Development
 
-The Docker setup mounts source volumes for hot reload. If you run services manually outside Docker, use the variables from `.env`.
+If you run services manually outside Docker, use the variables from `.env`.

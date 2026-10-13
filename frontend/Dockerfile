@@ -1,4 +1,5 @@
-FROM node:20-alpine
+# Build Stage
+FROM node:20-alpine AS builder
 
 WORKDIR /app/frontend
 
@@ -8,6 +9,19 @@ RUN npm install
 COPY frontend/. ./
 COPY Bilder /app/Bilder
 
-EXPOSE 5173
+RUN npm run build
 
-CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+# Runtime Stage
+FROM node:20-alpine
+
+WORKDIR /app/frontend
+
+# Install serve to serve the built app
+RUN npm install -g serve
+
+# Copy built assets from builder
+COPY --from=builder /app/frontend/dist ./dist
+
+EXPOSE 3000
+
+CMD ["serve", "-s", "dist", "-l", "3000"]

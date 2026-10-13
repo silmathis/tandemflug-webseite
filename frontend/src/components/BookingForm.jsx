@@ -56,21 +56,21 @@ export default function BookingForm({ flightTypePreset, onSubmitted }) {
     const trimmedWeight = formData.weightKg.trim();
 
     if (!trimmedFirstName || !trimmedLastName || !trimmedEmail || !trimmedFlightType) {
-      setStatus({ state: 'error', message: 'Please fill in the required fields.' });
+      setStatus({ state: 'error', message: 'Bitte alle Pflichtfelder ausfüllen.' });
       return;
     }
 
     if (!validateEmail(trimmedEmail)) {
-      setStatus({ state: 'error', message: 'Please enter a valid email address.' });
+      setStatus({ state: 'error', message: 'Bitte eine gültige E-Mail-Adresse eingeben.' });
       return;
     }
 
     if (trimmedWeight && Number.isNaN(Number(trimmedWeight))) {
-      setStatus({ state: 'error', message: 'Weight must be numeric.' });
+      setStatus({ state: 'error', message: 'Das Gewicht muss numerisch sein.' });
       return;
     }
 
-    setStatus({ state: 'loading', message: 'Submitting booking request...' });
+    setStatus({ state: 'loading', message: 'Buchungsanfrage wird gesendet...' });
 
     try {
       const response = await fetch(`${apiBaseUrl}/api/bookings`, {
@@ -93,19 +93,19 @@ export default function BookingForm({ flightTypePreset, onSubmitted }) {
 
       if (!response.ok) {
         const errorBody = await response.json().catch(() => ({}));
-        throw new Error(errorBody.error || 'Booking request failed.');
+        throw new Error(errorBody.error || 'Die Buchungsanfrage ist fehlgeschlagen.');
       }
 
       setFormData(createInitialState());
       setStatus({
         state: 'success',
-        message: 'Thank you for your booking request. We will contact you shortly.',
+        message: 'Danke für deine Buchungsanfrage. Wir melden uns bald bei dir.',
       });
       onSubmitted?.();
     } catch (error) {
       setStatus({
         state: 'error',
-        message: error.message || 'Something went wrong while sending your request.',
+        message: error.message || 'Beim Senden der Anfrage ist ein Fehler aufgetreten.',
       });
     }
   }
@@ -114,52 +114,52 @@ export default function BookingForm({ flightTypePreset, onSubmitted }) {
     <form className="booking-form" onSubmit={handleSubmit}>
       <div className="booking-form__grid">
         <label>
-          First Name *
+          Vorname *
           <input name="firstName" value={formData.firstName} onChange={updateField} type="text" autoComplete="given-name" required />
         </label>
         <label>
-          Last Name *
+          Nachname *
           <input name="lastName" value={formData.lastName} onChange={updateField} type="text" autoComplete="family-name" required />
         </label>
         <label>
-          Email *
+          E-Mail *
           <input name="email" value={formData.email} onChange={updateField} type="email" autoComplete="email" required />
         </label>
         <label>
-          Phone Number
+          Telefonnummer
           <input name="phone" value={formData.phone} onChange={updateField} type="tel" autoComplete="tel" placeholder="+41790000000" />
         </label>
         <label>
-          Flight Type *
+          Flugart *
           <select name="flightType" value={formData.flightType} onChange={updateField} required>
-            <option value="">Select a flight</option>
-            <option value="Panorama">Panorama Flight</option>
-            <option value="Thermal">Thermal Flight</option>
-            <option value="Adventure">Adventure Flight</option>
-            <option value="Gift Voucher">Gift Voucher</option>
+            <option value="">Flug auswählen</option>
+            <option value="Panoramaflug">Panoramaflug</option>
+            <option value="Thermikflug">Thermikflug</option>
+            <option value="Abenteuerflug">Abenteuerflug</option>
+            <option value="Geschenkgutschein">Geschenkgutschein</option>
           </select>
         </label>
         <label>
-          Preferred Date
+          Bevorzugtes Datum
           <input name="preferredDate" value={formData.preferredDate} onChange={updateField} type="date" />
         </label>
         <label>
-          Preferred Time
+          Bevorzugte Uhrzeit
           <input name="preferredTime" value={formData.preferredTime} onChange={updateField} type="time" />
         </label>
         <label>
-          Weight (kg)
+          Gewicht (kg)
           <input name="weightKg" value={formData.weightKg} onChange={updateField} type="number" min="0" step="1" inputMode="numeric" />
         </label>
       </div>
       <label className="booking-form__message">
-        Message
-        <textarea name="message" value={formData.message} onChange={updateField} rows="5" placeholder="Tell us more about your preferred date, experience, or questions." />
+        Nachricht
+        <textarea name="message" value={formData.message} onChange={updateField} rows="5" placeholder="Teile uns Wunschdatum, Erfahrung oder Fragen mit." />
       </label>
 
       <div className="booking-form__footer">
         <button type="submit" className="button button--primary">
-          Request Booking
+          Anfrage senden
         </button>
         <p className={`booking-form__status booking-form__status--${status.state}`} aria-live="polite">
           {status.message}

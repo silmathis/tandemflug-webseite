@@ -19,7 +19,7 @@ export default function OfferCard({ image, title, description, price, details, o
           ))}
         </dl>
         <button type="button" className="button button--secondary button--full" onClick={onBook}>
-          Book Flight
+          Flug buchen
         </button>
       </div>
     </article>
